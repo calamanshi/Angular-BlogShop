@@ -1,0 +1,37 @@
+<p>product works!</p>
+<div class="row">
+        <div class="col-md-5">
+                <!--as form in productservice.ts  -->
+                <form [formGroup]="this.productService.form" (ngSubmit)="onSubmit()">
+                        <input type="hidden" formControlName="$key">
+                        <div class="form-group">
+                                <label>Product Name</label>
+                                <input formControlName="proName" class="form-control" [ngClass]="{'is-invalid':submitted && formControls.proName.errors}">
+<div class="invalid-feedback" *ngIf="submitted && formControls.proName.errors">This field is required</div>
+                        </div>
+                        <div class="form-group">
+                                <label>Price</label>
+                                <input formControlName="proPrice" class="form-control">
+                        </div>
+                        <div class="form-group">
+                                <label>Stock</label>
+                                <input formControlName="proStock" class="form-control">
+                        </div>
+                        <div class="form-group">
+                                <label>Image</label>
+                                <input formControlName="proImage" class="form-control">
+                        </div>
+                        <div class="form-group">
+                                <input type="submit" class="btn btn-primary" value="Submit">
+
+                        </div>
+                </form>
+
+<div class="alert alert-info" *ngIf="showSuccessMessage">
+        submitted successfully.
+</div>
+        </div>
+        <div class="col-md-7">
+                <app-product-list></app-product-list>
+        </div>
+</div>

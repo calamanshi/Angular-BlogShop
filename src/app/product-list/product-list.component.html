@@ -1,0 +1,22 @@
+<p>product-list works!</p>
+<table class="table table-sm">
+        <thead>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Stock</th>
+                <th>Image</th>
+                <th>Bttns</th>
+        </thead>
+        <ng-container *ngFor="let product of productArray">
+                <tr class="table-dark">
+                        <td>{{product.proName}}</td>
+                        <td>{{product.proPrice}}</td>
+                        <td>{{product.proStock}}</td>
+                        <td>{{product.proImage}}</td>
+                        <td>
+                                <button class="btn btn-info">Edit</button>
+                                <button class="btn btn-danger">Delete</button>
+                        </td>
+                </tr>
+        </ng-container>
+</table>
